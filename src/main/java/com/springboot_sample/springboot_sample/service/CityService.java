@@ -24,4 +24,19 @@ public class CityService {
     public Optional<City> getCityById(Integer id) {
         return cityRepository.findById(id);
     }
+
+    public City addCity(City city) {
+        return cityRepository.save(city);
+    }
+
+    public City updateCity(City city) {
+        City data = cityRepository.findById(city.getId()).orElseThrow();
+        data.setName(city.getName());
+
+        return cityRepository.save(data);
+    }
+
+    public void deleteCountry(Integer id) {
+        cityRepository.deleteById(id);
+    }
 }
