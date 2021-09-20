@@ -1,7 +1,14 @@
 package com.springboot_sample.springboot_sample.entity;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import javax.persistence.*;
 
+@NoArgsConstructor
+@Getter
+@Setter
 @Entity
 public class City {
     @Id
@@ -10,20 +17,4 @@ public class City {
 
     @Column(length = 50, nullable = false)
     private String name;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 }
